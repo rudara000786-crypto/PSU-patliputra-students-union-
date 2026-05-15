@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PSU | Patliputra Students Union</title>
+    <!-- Preconnect to external resources for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Outfit:wght@300;400;600;900&display=swap');
+
+        :root {
+            --color-1: #C5FDD3; --color-2: #94E1B4; --color-3: #69C5A0;
+            --color-4: #45A994; --color-5: #288D8A; --color-6: #126171;
+            --color-7: #033854; 
+        }
+
+        /* Performance: Use content-visibility to skip rendering offscreen content */
+        section { content-visibility: auto; contain-intrinsic-size: 1px 500px; }
+
+        html, body {
+            overflow-x: hidden; width: 100%; margin: 0; padding: 0;
+            background-color: var(--color-7); color: white;
+            font-family: 'Outfit', sans-serif; scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .sigma-font { font-family: 'Syncopate', sans-serif; }
+
+        /* Smoother Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .special-text {
+            background: linear-gradient(90deg, var(--color-1), var(--color-3), var(--color-1), var(--color-5));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: flow 4s linear infinite;
+        }
+        @keyframes flow { to { background-position: 200% center; } }
+
+        /* Executive Frame Optimized */
+        .executive-frame {
+            position: relative; background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem 1.5rem; border-radius: 15px; overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2); margin-bottom: 1.5rem;
+        }
+        
+        .executive-frame::before {
+            content: ''; position: absolute; top: 0; left: -150%;
+            width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(148, 225, 180, 0.15), transparent);
+            transform: skewX(-25deg);
+            animation: shine 4s infinite;
+        }
+        @keyframes shine { 0% { left: -150%; } 100% { left: 150%; } }
+
+        .mountain-bg {
+            background: linear-gradient(to bottom, rgba(3, 56, 84, 0.85), rgba(3, 56, 84, 1)), 
+                        url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=60&w=800'); /* Optimized Image Size */
+            background-size: cover; background-position: center; background-attachment: fixed;
+        }
+
+        .member-slot {
+            background: rgba(18, 97, 113, 0.1);
+            border: 1px solid rgba(197, 253, 211, 0.05);
+            padding: 30px 15px; text-align: center; border-radius: 12px;
+            min-height: 140px; display: flex; flex-direction: column;
+            justify-content: center; position: relative;
+        }
+        .member-slot.filled {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(148, 225, 180, 0.2);
+        }
+        
+        .rank-badge {
+            font-family: 'Syncopate', sans-serif; font-size: 7px;
+            padding: 4px 8px; background: rgba(148, 225, 180, 0.05);
+            color: var(--color-1); border: 1px solid rgba(148, 225, 180, 0.2);
+            border-radius: 4px; display: inline-block; margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="w-full py-8 px-8 flex justify-between items-center border-b border-white/5">
+        <div class="sigma-font text-xs font-bold tracking-[0.5em] text-emerald-300">PSU</div>
+        <div class="text-[8px] sigma-font opacity-40 uppercase tracking-[0.6em]">Core Hierarchy</div>
+    </nav>
+
+    <section class="min-h-[60vh] flex flex-col items-center justify-center px-6 text-center">
+        <div class="reveal active">
+            <p class="sigma-font text-[9px] tracking-[1em] text-emerald-100 mb-8 uppercase opacity-50">United Founders</p>
+            <h1 class="sigma-font text-4xl md:text-7xl font-bold mb-10 leading-[0.9]">
+                PATLIPUTRA <br> <span class="special-text">STUDENTS</span> <br> UNION
+            </h1>
+        </div>
+    </section>
+
+    <section class="mountain-bg py-24 px-8">
+        <div class="max-w-xl mx-auto reveal text-center">
+            <p class="text-2xl font-bold leading-tight mb-4">
+                "Mountains don't bow to the wind. Leaders don't bow to the struggle."
+            </p>
+            <p class="text-[9px] sigma-font tracking-[0.4em] opacity-40 uppercase">Success Mindset</p>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-slate-950">
+        <div class="max-w-lg mx-auto">
+            <h2 class="sigma-font text-center text-[10px] mb-16 tracking-[1em] opacity-30 uppercase">The Command Chain</h2>
+
+            <div class="reveal mb-12">
+                <div class="bg-gradient-to-br from-slate-900 to-emerald-950 border border-emerald-500/30 p-10 rounded-3xl relative overflow-hidden text-center">
+                    <p class="text-[8px] sigma-font tracking-[0.5em] text-emerald-400 mb-4 uppercase">Co-Founder</p>
+                    <h3 class="sigma-font text-3xl text-white font-bold">Shivansh <br> Kashyap</h3>
+                    <div class="mt-4 inline-block px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded text-[7px] sigma-font tracking-widest text-emerald-300">RANK #01</div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="reveal executive-frame text-center">
+                    <p class="text-[8px] sigma-font tracking-[0.5em] text-emerald-300/40 mb-3 uppercase">President</p>
+                    <h3 class="sigma-font text-xl text-white">Pritam Kumar</h3>
+                    <div class="mt-4 inline-block px-2 py-1 bg-white/5 rounded text-[6px] sigma-font tracking-widest text-emerald-200">RANK #02</div>
+                </div>
+                <div class="reveal executive-frame text-center">
+                    <p class="text-[8px] sigma-font tracking-[0.5em] text-emerald-300/40 mb-3 uppercase">Visipresident</p>
+                    <h3 class="sigma-font text-xl text-white">Om Prakash</h3>
+                    <div class="mt-4 inline-block px-2 py-1 bg-white/5 rounded text-[6px] sigma-font tracking-widest text-emerald-200">RANK #03</div>
+                </div>
+                <div class="reveal executive-frame text-center">
+                    <p class="text-[8px] sigma-font tracking-[0.5em] text-emerald-300/40 mb-3 uppercase">Food Manager</p>
+                    <h3 class="sigma-font text-xl text-white">Shudhanshu</h3>
+                </div>
+                <div class="reveal executive-frame text-center">
+                    <p class="text-[8px] sigma-font tracking-[0.5em] text-emerald-300/40 mb-3 uppercase">Finance Manager</p>
+                    <h3 class="sigma-font text-xl text-white">Shitanshu</h3>
+                </div>
+                <div class="reveal executive-frame text-center">
+                    <p class="text-[8px] sigma-font tracking-[0.5em] text-emerald-300/40 mb-3 uppercase">Pandi Ji</p>
+                    <h3 class="sigma-font text-xl text-white">Saksham</h3>
+                </div>
+                <div class="reveal executive-frame text-center">
+                    <p class="text-[8px] sigma-font tracking-[0.5em] text-emerald-300/40 mb-3 uppercase">Electric Manager</p>
+                    <h3 class="sigma-font text-xl text-white">Pratik</h3>
+                </div>
+                <div class="reveal executive-frame text-center">
+                    <p class="text-[8px] sigma-font tracking-[0.5em] text-emerald-300/40 mb-3 uppercase">Hacker</p>
+                    <h3 class="sigma-font text-xl text-white">Harsh Ranjan</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-[#033854]">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="sigma-font text-center text-xs tracking-[0.8em] uppercase mb-16 opacity-30">Foundation 45 Members</h2>
+            <div id="members-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- Injected via JS for performance -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-40 px-6 text-center bg-[#01111a]">
+        <div class="reveal">
+            <p class="text-[9px] sigma-font tracking-[1.5em] opacity-20 mb-10 uppercase">Master Architect</p>
+            <h2 class="sigma-font text-4xl md:text-8xl font-black special-text uppercase tracking-tighter">
+                SHIVANSH <br> KASHYAP
+            </h2>
+            <p class="mt-12 text-[7px] sigma-font tracking-[0.5em] opacity-30">LEVEL 45 COMPLETION • 2024</p>
+        </div>
+    </footer>
+
+    <script>
+        // Performance: Data-driven render to reduce HTML size
+        const members = [
+            "Shivansh kashyap", "Pritam Kumar", "Om Parkash", "Shudhanshu",
+            "Gyanendra Kumar", "Anish Kumar", "Saksham", "Pratik",
+            "Rudra Pratap Singh", "Aniket", "Divanshyu", "Ravi", "Aryan", "Harsh",
+            "Lekhak Raj", "Shubh Raj", "Ayansh Raj", "Adarsh Kumar",
+            "Saket Suman", "Piyus Kumar", "Harsh Kummar", "Raushan Raj",
+            "Ankush Kumar", "Bhargav", "Shail Kumar", "Shubham", "Krish Kumar"
+        ];
+
+        const grid = document.getElementById('members-grid');
+        let html = '';
+        for(let i=1; i<=45; i++){
+            const name = members[i-1] || "Reserved Slot";
+            const filled = !!members[i-1];
+            html += `
+                <div class="reveal member-slot ${filled ? 'filled' : ''}">
+                    <div class="rank-badge">RANK #${String(i).padStart(2, '0')}</div>
+                    <p class="sigma-font text-[10px] ${filled ? 'text-emerald-300' : 'text-emerald-100/20'} uppercase tracking-widest">
+                        ${name}
+                    </p>
+                </div>`;
+        }
+        grid.innerHTML = html;
+
+        // Optimized Intersection Observer
+        const observerOptions = { threshold: 0.05, rootMargin: "0px 0px 50px 0px" };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Performance: Unobserve after animation
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
+
+```
